@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin
+    id="com.joenell.camera"
+    version="1.0.0"
+    xmlns="http://apache.org/cordova/ns/plugins/1.0">
+
+    <name>CameraPlugin</name>
+
+    <description>
+        Custom camera plugin for OutSystems 11 Mobile
+    </description>
+
+    <author email="joenell@example.com">
+        Joenell
+    </author>
+
+    <license>MIT</license>
+
+    <js-module
+        src="www/camera.js"
+        name="CameraPlugin">
+
+        <clobbers target="CameraPlugin" />
+
+    </js-module>
+
+    <platform name="android">
+
+        <config-file
+            target="AndroidManifest.xml"
+            parent="/*">
+
+            <uses-permission
+                android:name="android.permission.CAMERA" />
+
+        </config-file>
+
+        <source-file
+            src="src/android/CameraPlugin.java"
+            target-dir="src/com/joenell/camera" />
+
+    </platform>
+
+</plugin>
